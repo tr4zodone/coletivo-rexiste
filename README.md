@@ -13,11 +13,12 @@ Tambem foram adicionados as aplicaçoes "hitcount" e a versão community do edit
 
 ---
 
-Foram adicionados à esta versão: 
+Embora esta seja a primeira versão disponvel no site, ela no é a primeira. A primeira havia algumas pequenas falhas, que foram corrigidas nesta versão. A primeira versão não há de ser encontrada no histórico eu precisei deletá-la, já que, sem querer, acabei fazendo o upload the informação confidencial que jazia em settings.py (senha do email, senha secreta do app, email secreto.)
+
+À esta verso, de diferente da outra, foi adicionado o seguinte: 
 
 * as páginas de erro (400, 403, 404, 500);
 * os links para nossas redes sociais (Twitter, Facebook e Instagram);
 * foi ajustado o footer para que não sumisse no mobile
-* foi alterado parte do design da página principal
-
-
+* foi alterado parte do design da página principal (em vez de três thumbnails agora são quatro; em vez de "Sobre Nós", "Contato" e "Contribua" agora se mostra a configuração atual, que não inclui mais "Contribua", e inclui "Informe-se".
+* Foram limpados alguns arquivos que se mostravam inúteis e não estavam sob uso (o famoso "código comentado").
