@@ -11,4 +11,13 @@ Há um pequeno script adicional em jQuery.
 
 Tambem foram adicionados as aplicaçoes "hitcount" e a versão community do editor HTML "CKEditor".
 
+---
+
+Foram adicionados à esta versão: 
+
+* as páginas de erro (400, 403, 404, 500);
+* os links para nossas redes sociais (Twitter, Facebook e Instagram);
+* foi ajustado o footer para que não sumisse no mobile
+* foi alterado parte do design da página principal
+
 
