@@ -1,0 +1,11 @@
+*.pyc
+*~
+__pycache__
+db.sqlite3
+.DS_Store
+.ipynb_checkpoints
+/about
+delete_migrations.sh
+*.ipynb
+db1
+coletivo/settings.py

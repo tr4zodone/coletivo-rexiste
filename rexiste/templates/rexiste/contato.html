@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Coletivo (R)existe | Contato {% endblock %}
+{% block content %}
+
+<div class="container" style="padding-bottom: 20px;">
+    <div class="row contact-text"> 
+	<h2>Contato</h2>
+	<p>Você pode entrar em contato conosco de diversas formas.</p>
+
+	<p>Ainda não temos um endereço onde centralizar nossas atividades.</p>
+	<p>Em geral, nos encontramos em reuniões, das quais algumas são abertas.</p>
+	<p>Nossas reuniões abertas têm suas datas e locais notificados na <a href="https://www.facebook.com/rexistecoletivo">nossa página do Facebook</a>.
+	<p>Você também pode falar conosco através da página do Facebook.</p>
+    </div>
+    <div>
+      <h2>Envie-nos um Email</h2>
+      <form method="POST" class="post-form">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" class="btn btn-default">Enviar</button>
+      </form>
+    </div>
+</div>
+{% endblock %}
+

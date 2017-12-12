@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Rascunhos | Coletivo (R)existe {% endblock %}
+{% block content %}
+<div class="container centerstage">
+  <h1 style="color: #666;">Rascunhos </h1>
+  {% for post in posts %}
+
+  <div class="col-lg-12">
+    <hr>
+    <h2 style="float: left; margin-top:0;"><a class="post_link" href="{% url 'post_detail' slug=post.slug pk=post.pk %}">{{ post.title }}</a></h2>
+    <p class="date" style="font-size: 16px; float: right;"><span class="glyphicon glyphicon-calendar"></span> Criado em: {{post.create_date}}</p>
+
+
+    {% endfor %}
+
+  <div class="col-lg-12">
+  {% include "rexiste/_paginate.html" %}
+  </div>
+</div>
+
+{% endblock %}
+

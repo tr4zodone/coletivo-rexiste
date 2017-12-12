@@ -1,0 +1,21 @@
+{% if posts.has_other_pages %}
+<ul class="pager">
+  {% if posts.has_previous %}
+    <li style="float:left" class="previous"><a href="?page={{ posts.previous_page_number }}&q={{ request.GET.q }}">Anterior</a></li>
+  {% else %}
+    <li style="float: left;"  class="disabled"><span>Anterior</span></li>
+  {% endif %}
+  {% for i in posts.paginator.page_range %}
+    {% if posts.number == i %}
+	<li class="active"><span>{{ i }}<span class="sr-only"></span></span></li>
+    {% else %}
+	<li><a href="?page={{ i }}&q={{ request.GET.q }}">{{ i }}</a></li>
+    {% endif %}
+  {% endfor %}
+  {% if posts.has_next %}
+    <li style="float:right;" class="next"><a href="?page={{ posts.next_page_number }}&q={{ request.GET.q }}">Próximo</a></li>
+  {% else %}
+    <li style="float:right;" class="disabled"><span>Próximo</span></li>
+  {% endif %}
+</ul>
+{% endif %}

@@ -1,0 +1,31 @@
+<div id="searchbar" class="searchbar-expanded">
+    <ul class="nav nav-pills nav-stacked">
+	<li>
+	    <form action="" method="get" acept-charset="utf-8">
+		<div class="input-group">
+		    
+		    {% csrf_token %}
+		    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+		    <input type="text" class="form-control" name="q" placeholder="Buscar" value="{{ request.GET.q }}" aria-describedby="basic-addon1" required>
+		</div>
+	    </form>
+	</li>
+       
+	<div id="popper">
+	  <li style="margin-top: 10px; margin-bottom: 0;">
+	    <strong class="margin: 0;"><p >Postagens relevantes</p></strong> 
+	    <hr class="">
+	    <br>
+	    {% for post in posts_sorted %}
+	    <div class="row" style="margin: 0; padding: 0;">
+	      <a href="{% url 'post_detail' slug=post.slug pk=post.pk %}" >
+		<h4 style="font-size: 12px;">{{post.title}}</h4>
+	      </a>
+	    </div>
+	    {% endfor %}
+	  </li>
+	</div>
+
+    </ul>
+</div>
+<br>

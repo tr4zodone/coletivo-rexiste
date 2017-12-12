@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="container">
+    <h2>Nova referência</h2>
+    <form action="" class="link_form" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="save btn btn-default">Enviar</button>
+    </form>
+  </div>
+  
+</div>
+
+
+{% endblock %}

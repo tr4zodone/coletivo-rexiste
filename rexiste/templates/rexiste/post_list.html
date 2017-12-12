@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} Postagens | Coletivo (R)existe {% endblock %}
+{% block content %}
+
+<div class="container centerstage">
+  <h1>Postagens</h1>
+  {% for post in posts %}
+
+  <div class="post col-lg-9 jumbotron">
+
+    <div class="cover-div">
+      <img class="cover center-block" alt="" src="{{ post.cover.url }}"/>
+     </div>
+
+    <h2><a class="post_link" href="{% url 'post_detail' slug=post.slug pk=post.pk %}">{{ post.title }}</a></h2>
+
+    <p class="date" style="font-size: 16px; margin-top: 5px;"><span class="glyphicon glyphicon-calendar"></span> {{post.published_date}}</p>
+
+
+    <p style="font-size: 16px;">{{post.text|truncatechars_html:1024|safe}}</p>
+    {% if post.text|length >= 1024 %}
+    <a class="post_link" href="{% url 'post_detail' slug=post.slug pk=post.pk %}">Ler mais</a>
+    {% endif %}
+    <hr>
+  </div>
+  {% endfor %}
+  
+  <div class="col-lg-3;">
+  {% include "rexiste/_sidebar.html" %}
+  </div>
+
+  <div class="col-lg-9">
+  {% include "rexiste/_paginate.html" %}
+  </div>
+</div>
+
+{% endblock %}
+

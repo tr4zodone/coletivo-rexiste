@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %} Artigos e Referências | Coletivo (R)existe {% endblock %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+
+  <h1>Fontes, referências, artigos, notícias -- livres</h1>
+  <p>Uma das coisas em que acreditamos no Coletivo é na livre circulação de informação. Desta forma, disponibilizamos alguns conteúdos que achamos pertinentes que sejam difundidos, de toda sorte: em português, inglês e espanhol; material didático, notícias, livros, artigos, postagens de outros sites, entre outros. Veja a seguir se encontra algo que lhe seja útil.</p>
+
+  <p>A seguir estão estes links, separados em tags em <strong>ordem alfabética</strong>:</p>  
+
+  <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 container">
+    
+    {% for tag in tags %}
+
+    <div style="display:inline;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+      <h4>{{tag.title}}</h4>
+
+
+	{% for link in links %}
+	    {% if link.tag == tag %}
+		{% if link.language == "pt" %}
+		<hr>
+		<div class="col-lg-10">
+		  <a class="post_link" href="{{link.url}}"><p>{{link.title|truncatechars_html:90|safe}}</p></a>
+		</div>
+		{% endif %}
+
+		{% if link.language == "en" %}
+		<hr>
+		<span><strong>Inglês</strong></span>
+
+		<div class="col-lg-10">
+		  <a class="post_link" href="{{link.url}}"><p>{{link.title|truncatechars_html:90|safe}}</p></a>
+		</div>
+		{% endif %}
+
+		{% if link.language == "es" %}
+		<hr>
+		<span class=""><strong>Espanhol</strong></span>
+		<div class="col-lg-10">
+		  <a class="post_link" href="{{link.url}}"><p>{{link.title|truncatechars_html:90|safe}}</p></a>
+		</div>
+		{% endif %}
+
+		{% if user.is_authenticated %}
+		    <a class="post_link" class="col-lg-1 col-md-1 col-xs-1 col-sm-1" style="float: right;" href="{% url 'link_detail' pk=link.pk %}"><span class="glyphicon glyphicon-cog"></span></a>
+		{% endif %}
+	    {% endif %}
+	{% endfor %}
+
+    </div>
+
+    <span></span>
+    {% endfor %}
+    
+    {% if user.is_authenticated %}
+    <div class="col-lg-12" style="margin-top: 20px;">
+      <a style="float: right;" class="btn btn-primary" href="{% url 'add' %}">Adicionar link</a>
+    </div>
+    {% endif %}
+
+  </div>
+  <br>
+
+</div>
+
+{% endblock %}

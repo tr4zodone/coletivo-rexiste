@@ -1,0 +1,89 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+
+    <title>
+    {% block title %} {% endblock %}
+    </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- custom css-->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+  </head>
+
+<body id="body_edit" style="background-color: #dd8e37;" onresize="widthWatch()">
+    <!-- here begins the NAVBAR --> 
+    <div  style="background-color: white;">
+	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: white;">
+	<div class="container">
+	    <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		    <span class="sr-only"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" id="branding" href="{% url 'index' %}">Coletivo (R)existe</a>
+
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		{% if user.is_authenticated %}
+		<ul class="nav navbar-nav navbar-left">
+		  <li><a class="blue" href="{% url 'novo_post' %}">Novo Post</a></li>
+		  <li><a class="blue" href="{% url 'rascunhos' %}">Rascunhos</a></li>
+		  <li><a class="blue" href="{% url 'logout' %}">Sair</a></li>
+		</ul>
+		{% endif %}
+
+
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="{% url 'about' %}">Sobre</a></li>
+		  <li><a href="{% url 'resources' %}">Artigos e Referências</a></li>
+		  <li><a href="{% url 'post_list' %}">Postagens</a></li> 
+		  <li><a href="{% url 'contato' %}">Contato</a></li>	
+		</ul>
+
+	</div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<div >
+	<div class="content">
+		<div class="row" style="padding-top: 40px; padding-bottom: 20px;">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</div>
+</div>
+
+{% include "_footer.html" %}
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type="text/javascript" src="{% static "js/script.js" %}"></script>
+
+
+</body>
+</html>

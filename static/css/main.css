@@ -1,0 +1,97 @@
+body
+{
+	margin: 0;
+	font-family: sans-serif;
+	overflow-x: hidden;
+}
+
+#body_edit
+{
+    min-height: 1000px;
+}
+
+#branding
+{
+    color: #dd8e37;
+    font-family: Franklin Gothic Demi, sans-serif;
+}
+
+#branding:hover
+	      {
+		  color: orange;
+	      }
+
+.navbar-default .navbar-nav li a
+{
+    font-family: sans-serif;
+    color: #DD8E37;
+} 
+.container-fluid .navbar-brand:hover{
+    color: orange;
+}
+.navbar-default .navbar-nav li a:hover{
+    color: orange;
+}
+
+.navbar navbar-default navbar-fixed-top
+{
+     background-color: #ffffff;
+}
+
+.jumbotron 
+{
+   /* color: #ffffff;*/
+}
+
+.post-form input, .post-form textarea
+{
+    width: 100%;
+}
+
+.contact-text
+{
+    margin: 0 auto;
+}
+
+.rexiste-logo
+{
+	background-image: url(img/orange.jpg);
+	background-size: cover;
+	height: 500px;
+	color: #DD8E37;
+}
+
+.orangetron
+{
+    background: #DD8E37;
+}
+
+.thumbnail
+{
+    border: 1px solid #dd8e37;
+}
+
+.content
+{
+    min-height: 1000px;
+}
+
+.navbar-default .navbar-nav li .blue
+{
+    color: #487bce;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.icon-es
+{
+    background-image: url(img/spain.png);
+}
+
+.post_link:hover
+
+	       {
+		   color: #dd8e37;
+		   transition: 0.3s;
+		   text-decoration: none;
+	       }

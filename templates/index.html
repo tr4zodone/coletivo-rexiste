@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Coletivo (R)existe | Campo Grande{% endblock %}
+
+{% block content %}
+
+
+
+<!-- here begins the jumbotron -->
+<div class="jumbotron rexiste-logo">
+  <div class="container">
+  </div>
+</div>
+
+<!-- some presentation -->
+
+<div class="container" style="font-family: sans-serif; color: #999999;">
+
+<h1 class="text-center">Somos um <span style="color:#dd8e37;">coletivo</span> independente em <span style="color: #dd8e37;">Campo Grande</span>, Zona Oeste do Rio de Janeiro</h1>
+  <br>
+  <p class="text-center">Nós somos a luz das estrelas \ Nós somos a cor do luar \ Nós somos as coisas da vida \ Nós somos o medo de amar \ Nós somos o medo do fraco \ A força da imaginação \ O blefe do jogador \ Nós somos \ Nós fomos \ Nós vamos</p>
+</div>
+
+<!-- detail grid -->
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="roundnails">
+	<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center">
+	  <div class="thumbnail">
+	    <img class="img-circle" src="{% static 'css/img/oranges.jpg' %}"/>
+	    <div class="caption">
+		<h2>Sobre Nós</h2>
+		<p>Pré-vestibular comunitário, ecologia, horta comunitária, democratização da Ciência e mais!</p>
+		<a class="post_link"  href="{% url 'about' %}">Saiba mais</a>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center">
+	  <div class="thumbnail">
+	    <img class="img-circle" src="{% static 'css/img/limoeiro.jpg' %}"/>
+	    <div class="caption">
+		<h2>Acompanhe-nos</h2> 
+		<p>Acompanhe nossas ações, eventos e mídias em geral através de nossas postagens!</p>
+		<a class="post_link" href="{% url 'post_list' %}">Saiba mais</a>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center">
+	  <div class="thumbnail">
+	    <img class="img-circle" src="{% static 'css/img/laranjeira.jpg' %}" />
+	    <div class="caption">
+		<h2>Informe-se</h2>
+		<p>Estamos alimentando um banco de dados com todo tipo de artigos, livros e referências. Talvez voce encontre algo do seu interesse!</p>
+		<a class="post_link" href="{% url 'resources' %}">Saiba mais</a>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center">
+	  <div class="thumbnail">
+	    <img class="img-circle" src="{% static 'css/img/oranges.jpg' %}"/>
+	    <div class="caption">
+		<h2>Fale Conosco</h2> 
+		<p>Você pode entrar em contato conosco através do nosso e-mail, WhatsApp, ou mesmo comparecer em uma de nossas reuniões abertas!</p>
+		<a class="post_link" href="{% url 'contato' %}">Saiba mais</a>
+	    </div>
+	  </div>
+  </div>
+  </div>
+
+    </div>
+<br>
+<div class="center-block text-center" style="font-family: sans-serif; color: #999999;">
+
+  <h3>Siga-nos em nossas redes sociais!</h3>
+  <a class="social-icon" href="https://twitter.com/coletivorexiste"><img src="{% static 'css/img/re_twitter.png' %}" /></a>
+
+  <a class="social-icon" href="https://www.facebook.com/rexistecoletivo/"><img src="{% static 'css/img/re_facebook.png' %}" /></a>
+
+  <a class="social-icon" href="https://www.instagram.com/coletivorexiste/"><img src="{% static 'css/img/re_instagram.png' %}" /></a>
+</div>
+
+</div>
+
+{% endblock %}
