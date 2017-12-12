@@ -13,7 +13,7 @@ Tambem foram adicionados as aplicaçoes "hitcount" e a versão community do edit
 
 ---
 
-Embora esta seja a primeira versão disponvel no site, ela no é a primeira. A primeira havia algumas pequenas falhas, que foram corrigidas nesta versão. A primeira versão não há de ser encontrada no histórico eu precisei deletá-la, já que, sem querer, acabei fazendo o upload the informação confidencial que jazia em settings.py (senha do email, senha secreta do app, email secreto.)
+Embora esta seja a primeira versão disponvel no repositório, ela no é a primeira. A primeira havia algumas pequenas falhas, que foram corrigidas nesta versão. A primeira versão não há de ser encontrada no histórico eu precisei deletá-la, já que, sem querer, acabei fazendo o upload the informação confidencial que jazia em settings.py (senha do email, senha secreta do app, email secreto.)
 
 À esta verso, de diferente da outra, foi adicionado o seguinte: 
 
