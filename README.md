@@ -15,7 +15,7 @@ Tambem foram adicionados as aplicaçoes "hitcount" e a versão community do edit
 
 Embora esta seja a primeira versão disponvel no repositório, ela não é a primeira versão de todas. A primeira havia algumas pequenas falhas, que foram corrigidas nesta versão. A primeira versão não há de ser encontrada no histórico pois eu precisei deletá-la, já que, sem querer, acabei fazendo o upload the informação confidencial que jazia em settings.py (senha do email, senha secreta do app, email secreto.), e fiz uso do git filter-branch de modo que, acredito eu, acidentalmente gerou alguns bugs no meu repositório original, mas estes já foram corrigidos neste.
 
-À esta verso, de diferente da outra, foi adicionado o seguinte: 
+À esta versão, de diferente da outra, foi adicionado o seguinte: 
 
 * as páginas de erro (400, 403, 404, 500);
 * os links para nossas redes sociais (Twitter, Facebook e Instagram);
