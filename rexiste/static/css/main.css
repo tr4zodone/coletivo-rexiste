@@ -30,7 +30,7 @@ body
 {
     font-family: sans-serif;
     color: #DD8E37;
-} 
+}
 .container-fluid .navbar-brand:hover{
     color: orange;
 }
@@ -43,7 +43,7 @@ body
      background-color: #ffffff;
 }
 
-.jumbotron 
+.jumbotron
 {
    /* color: #ffffff;*/
 }
@@ -60,7 +60,7 @@ body
 
 .rexiste-logo
 {
-	background-image: url(img/orange.jpg);
+	background-image: url(img/arte_front.png);
 	background-size: cover;
 	height: 500px;
 	color: #DD8E37;
@@ -73,7 +73,7 @@ body
 
 .thumbnail
 {
-    border: none; 
+    border: none;
     box-shadow: none;
 }
 
@@ -188,11 +188,11 @@ body
 
 .searchbar-expanded
 {
-    margin-top: 60px; 
+    margin-top: 60px;
     padding: 20px;
 }
 
-.social-icon img 
+.social-icon img
 {
     max-width: 120px;
     max-height: 120px;
@@ -210,4 +210,67 @@ body
 {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+
+.resource-icon
+{
+    padding-right: 5px;
+    color: #ccc;
+}
+
+.resource-text
+{
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.btn-res
+{
+    background: white;
+    border: solid 1px #dd8e37;
+    color: #666;
+    min-width: 110px;
+}
+
+.btn-res:hover
+{
+    transition: 0.5s;
+    background: #dd8e37;
+    color: #eee;
+    border: solid 1px #dd8e37;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.lang
+{
+    float: right;
+    padding-right: 10px;
+}
+
+.colsource
+{
+    width: 60%;
+}
+
+.collang
+{
+    width: 30%;
+}
+
+.coledit
+{
+    width: 10%;
+
 }

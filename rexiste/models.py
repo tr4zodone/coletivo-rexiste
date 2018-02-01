@@ -3,7 +3,7 @@ from django.db.models import signals
 from django.utils import timezone
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
-
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.contenttypes.fields import GenericRelation
 from hitcount.models import HitCount, HitCountMixin
 
@@ -12,7 +12,7 @@ from hitcount.models import HitCount, HitCountMixin
 class Post(models.Model, HitCountMixin):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=140)
-    text = models.TextField()
+    text = RichTextUploadingField()
     create_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     slug = models.SlugField(max_length=100, blank=True)
@@ -29,7 +29,7 @@ class Post(models.Model, HitCountMixin):
         if not self.id:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
-    
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
@@ -43,4 +43,4 @@ class Post(models.Model, HitCountMixin):
     signals.pre_save.connect(article_pre_save, sender="rexiste.Post")
 
 
-    
+

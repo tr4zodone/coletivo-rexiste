@@ -48,7 +48,7 @@ def email(request):
     return render(request, "rexiste/contato.html", {'form': form})
 
 def thanks(request):
-    return HttpResponse('Thank you for your message.')
+    return render(request, 'rexiste/obrigado.html')
 
 def post_list_view(request):
     

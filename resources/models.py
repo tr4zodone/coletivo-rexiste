@@ -9,11 +9,11 @@ LANGUAGE_CHOICES = (("pt", 'Português'),("en", 'English'), ("es", 'Español'))
 def validate_number_of_instances(obj, INSTANCE_NUMBER):
     model = obj.__class__
     if(model.objects.count() > INSTANCE_NUMBER):
-        raise ValidationError("Can only have up to {} {} instances".format(INSTANCE_NUMBER, model.__name__)) 
+        raise ValidationError("Só podem haver até {} instâncias do modelo {}.".format(INSTANCE_NUMBER + 1, model.__name__))
 
 # link tags
 class Tag(models.Model):
-    title = models.CharField(max_length=50, blank=False, unique=True, error_messages={'unique':"Esta tag já existe."}) 
+    title = models.CharField(max_length=50, blank=False, unique=True, error_messages={'unique':"Esta tag já existe."})
 
     def __str__(self):
         return self.title
@@ -34,5 +34,16 @@ class Link(models.Model):
     def get_absolute_url(self):
         return reverse("link_detail", kwargs={'pk': self.pk})
 
+class File(models.Model):
+    title = models.CharField(max_length=100, blank=False)
+    local_file = models.FileField(blank=False, upload_to='Media')
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, null=False, blank=False)
+    language = models.CharField(max_length=10, blank=False)
 
-  
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("file_detail", kwargs={'pk':self.pk})
+
+

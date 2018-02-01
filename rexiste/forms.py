@@ -3,6 +3,8 @@ from django.contrib import admin
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from rexiste.models import Post
 
+from ckeditor_uploader.fields import RichTextUploadingField
+
 class ContactForm(forms.Form):
     nome = forms.CharField(required=True)
     email= forms.EmailField(required=True)
@@ -12,13 +14,8 @@ class ContactForm(forms.Form):
 class PostForm(forms.ModelForm):
 
     cover = forms.ImageField(required=True)
-    text = forms.CharField(widget=CKEditorUploadingWidget())
+    forms = RichTextUploadingField()
 
     class Meta():
         model = Post
         fields = ('author', 'title', 'cover', 'text')
-
-        widgets = {
-            'title' : forms.TextInput(attrs={'class':'textinputclass'}),
-            'text': forms.Textarea(attrs={'class':'postcontent'})
-            }

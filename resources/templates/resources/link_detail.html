@@ -7,10 +7,10 @@
   <div class="container">
     <p>Tag: {{link.tag}}</p>
     <p>URL: <a href="{{object.url}}">{{object.url}}</a></p>
-    <a class="btn btn-default" href="{% url 'edit' pk=link.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    <a class="btn btn-danger" href="{% url 'delete' pk=link.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    <a class="btn btn-default" href="{% url 'link_edit' pk=link.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-danger" href="{% url 'link_delete' pk=link.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
   </div>
-  
+
 </div>
 
 {% endblock %}

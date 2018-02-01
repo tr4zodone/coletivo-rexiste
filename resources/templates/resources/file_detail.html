@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h3 class="object_title">{{file.title}}</h3>
+  <div class="container">
+    <p>Tag: {{file.tag}}</p>
+    <p>URL: <a href="{{object.url}}">{{object.url}}</a></p>
+    <a class="btn btn-default" href="{% url 'file_edit' pk=file.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-danger" href="{% url 'file_delete' pk=file.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+  </div
+
+</div>
+
+{% endblock %}
