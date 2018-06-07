@@ -87,6 +87,7 @@ body
 .content
 {
     min-height: 1000px;
+    padding: 1em;
 }
 
 .navbar-default .navbar-nav li .blue
@@ -124,7 +125,7 @@ body
 
 .cover
 {
-    object-fit: cover;
+    /*object-fit: cover;*/
     height: 400px;
     max-width: 100%;
 }
