@@ -7,3 +7,5 @@ db.sqlite3
 /about
 *.ipynb
 db1
+media
+media/*
